@@ -1,0 +1,45 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+int main()
+{
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+  float x, pr1, pr2, pr3;
+  cout << "\n\t\tРозрахунок вартості товару з урахуванням знижки" << endl;
+  cout << "\nВведіть вартість товару -> ";
+  cin >> x;
+  while (x <= 0)
+  {
+  cout << "\n\t\tВведіть коректні данні" << endl;
+  cout << "\nВведіть вартість товару -> ";
+  cin >> x;
+  }
+     if (x <= 100)
+     {
+     cout << "\n\t\tДля цього товару немає знижки" << endl;
+     cout << "До сплати " << x << " Грн" << endl;
+     }
+     else
+       if ((x > 100) && (x <= 500))
+       {
+       cout << "\n\t\tДля цього товару знижка становить 1%" << endl;
+       pr1 = x - x * 0.01;
+       cout << "\nДо сплати " << pr1 << " Грн" << endl;
+       }
+       else
+         if ((x > 500) && (x <= 1000))
+         {
+         cout << "\n\t\tДля цього товару знижка становить 2%" << endl;
+         pr2 = x - x * 0.02;
+         cout << "\nДо сплати " << pr2 << " Грн" << endl;
+         }
+         else
+           if (x > 1000)
+           {
+           cout << "\n\t\tДля цього товару знижка становить 3%" << endl;
+           pr3 = x - x * 0.03;
+           cout << "\nДо сплати " << pr3 << " Грн" << endl;
+           }
+  return 0;
+}
